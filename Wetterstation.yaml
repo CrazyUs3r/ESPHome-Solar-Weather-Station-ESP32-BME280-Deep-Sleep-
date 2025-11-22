@@ -36,7 +36,6 @@ esphome:
             id(wakeup_counter)++;
         - component.update: wakeups_today
         - delay: 200ms
-        - component.update: wakeups_today
         - script.execute: decide_solar_sleep
         - script.execute: consider_deep_sleep
         - script.execute: reset_min_max_if_new_day
@@ -130,9 +129,6 @@ script:
                   timeout: 15s
               - component.update: last_update_time
               - delay: 200ms
-              - lambda: |-
-                  id(wakeup_counter)++;
-              - component.update: wakeups_today
               - script.execute: decide_solar_sleep
               - script.wait: decide_solar_sleep
               - deep_sleep.enter:
