@@ -1,0 +1,2 @@
+# ESPHome-Solar-Weather-Station-ESP32-BME280-Deep-Sleep-
+This project is a low-power, solar-powered weather station built with an ESP32 (NodeMCU-32S) and a BME280 sensor for measuring temperature, humidity, and air pressure.  It is designed for maximum energy efficiency using a dynamic deep sleep algorithm based on the measured solar voltage and is fully integrated into Home Assistant via ESPHome.  
