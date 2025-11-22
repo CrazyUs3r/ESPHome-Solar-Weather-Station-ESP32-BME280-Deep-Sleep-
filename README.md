@@ -30,3 +30,75 @@ Solar Voltage	Sleep Time
 > 2.5 V	35 minutes
 > 1.0 V	45 minutes
 ≤ 1.0 V	70 minutes
+
+
+Deep sleep can also be manually enabled/disabled using the Home Assistant entity:
+
+input_boolean.wetterstation_deep_sleep
+
+
+🔋 Power System
+
+Battery voltage reading via ADC + voltage divider (R1 / R2)
+
+Percentage calculation based on 3.2 V – 4.2 V
+
+Text status: Full / OK / Low / Critical
+
+Solar voltage is used to control sleep cycle duration
+
+📦 Hardware
+
+ESP32 NodeMCU-32S
+
+BME280 (I2C address: 0x76)
+
+Li-Ion battery
+
+Solar panel
+
+Voltage divider (R1 = 97kΩ, R2 = 26.8kΩ – adjustable)
+
+Outdoor enclosure (recommended)
+
+🏠 Home Assistant Integration
+
+The station exposes the following main entities:
+
+Temperature, humidity, pressure
+
+Dew point & altitude
+
+Min/Max (temperature and humidity)
+
+Battery percentage
+
+Solar voltage
+
+Wake-ups per day
+
+Last update
+
+Sleep mode state
+
+WiFi signal quality
+
+Connected via ESPHome API (encrypted).
+
+🗂 Configuration Overview
+
+Platform: ESP32 (nodemcu-32s)
+
+Framework: Arduino
+
+BME280 via I²C (SDA 21 / SCL 22)
+
+ADC:
+
+GPIO34 → Battery
+
+GPIO35 → Solar
+
+Dynamic deep sleep control via scripts
+
+🚀 Planned Extensions
